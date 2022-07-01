@@ -1,0 +1,14 @@
+<h1>New post</h1>
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div>
+  <%= link_to "Back to posts", posts_path %>
+</div>
+
+<h2>Turbo Stuff</h2>
+<%= turbo_frame_tag id="new_post" do %>
+  <%= render "form", post: @post %>
+<% end %>

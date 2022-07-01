@@ -1,0 +1,60 @@
+
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= turbo_frame_tag id="new_post", src:new_post_path %>
+<div id="posts">
+  <%= render @posts %>
+  
+</div>
+
+
+<hr>
+
+<div data-controller="hello" data-hello-number-value=4>
+<h1 data-hello-target="output"></h1>
+<button class="btn-danger" data-action='hello#clicked'>Add one to the number</button>
+</div>
+
+<hr>
+
+<div data-controller="text-input">
+  <input type="text" data-action="text-input#changed" data-text-input-target="input" placeholder="Type to see it big!">
+  <h1 data-text-input-target="output"></h1>
+</div>
+
+<hr>
+
+<div data-controller="styling" data-styling-primary-class="btn-primary">
+  <button class="btn" data-styling-target="button" data-action="styling#clicked">
+  I toggle blue when clicked!
+  </button>
+</div>
+
+
+<hr>
+
+<div data-controller="visibility">
+  <button data-action="visibility#hideTargets">Hide</button>
+  <button data-action="visibility#toggleTargets">Show/Hide</button>
+  <button data-action="visibility#swapTargets" data-visibility-target="hideable" >I disapper when clicked</button>  
+  <h1 data-visibility-target="showable" hidden >Surprise!</h1>
+</div>
+
+
+<hr>
+
+<div data-controller="visibility" data-visibility-highlight-class="text-warning">
+  <button data-action="visibility#highlightTargets">Highlight text</button>
+  <p data-visibility-target="text">I get highlighted</p>
+</div>
+
+<hr>
+
+<div data-controller="limit" data-limit-over-class="text-danger" data-limit-number-value=10 >
+  <input type="text" data-limit-target="field" data-action="keyup->limit#change">
+  <p>Limit: 10 characters
+  <div data-limit-target="output"></div>
+  
+</div>
